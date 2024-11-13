@@ -17,8 +17,10 @@
     <title>@yield('seller_page_title')</title>
 
     <link href="{{asset('admin_asset/css/app.css')}}" rel="stylesheet">
-    <link href="{{asset('admin_asset/css/bootstrap.min.css')}}" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+{{--    <link href="{{asset('admin_asset/css/bootstrap.min.css')}}" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">--}}
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Sahifa bosh qismida -->
+    @livewireStyles
 </head>
 
 <body>
@@ -296,7 +298,8 @@
 </div>
 
 <script src="{{asset('admin_asset/js/app.js')}}"></script>
-
+<!-- Sahifa oxirida, </body> tegidan oldin -->
+@livewireScripts
 </body>
 
 </html>
