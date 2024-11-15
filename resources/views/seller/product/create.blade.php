@@ -27,13 +27,16 @@
                         </div>
                     @endif
 
-                    <form action="" method="POST">
+                    <form action="{{route('vendor.product.store'}}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <label for="product_name" class="fw-bold mb-2">Giv Name of Your Product</label>
                         <input type="text" class="form-control mt-2" name="product_name" placeholder="Lenovo IdealPad 5 Pro">
 
-                        <label for="description" class="fw-bold mb-2">Giv Name of Your Product</label>
+                        <label for="description" class="fw-bold mb-2">Description/label>
                         <textarea name="description" class="form-control mt-2" id="description" cols="30" rows="10"></textarea>
+
+                        <label for="images" class="fw-bold mb-2">Up0load Your Product Imagers</label>
+                        <input type="file" class="form-control mt-2" name="images[]" multiple>
 
                         <label for="sku" class="fw-bold mb-2">SKU</label>
                         <input type="text" class="form-control mt-2" name="sku" placeholder="LXD3402    ">
@@ -45,9 +48,31 @@
                             @foreach($stores as $store)
                             <option value="{{$store->id}}">{{$store->store_name}}</option>
                             @endforeach
-
                         </select>
 
+                        <label for="regular_price" class="fw-bold mb-2">Product Regular Price</label>
+                        <input type="number" class="form-control mt-2" name="regular_price" >
+
+                        <label for="regular_price" class="fw-bold mb-2">Product Regular Price</label>
+                        <input type="number" class="form-control mt-2" name="regular_price" >
+
+                        <label for="discounted_price" class="fw-bold mb-2">Discounted Price (if any)</label>
+                        <input type="number" class="form-control mt-2" name="discounted_price" >
+
+                        <label for="tax_rate" class="fw-bold mb-2">Text</label>
+                        <input type="text" class="form-control mt-2" name="tax_rate" >
+
+                        <label for="stock_quantity" class="fw-bold mb-2">Stock Quantity</label>
+                        <input type="number" class="form-control mt-2" name="stock_quantity" >
+
+                        <label for="slug" class="fw-bold mb-2">Slug</label>
+                        <input type="text" class="form-control mt-2" name="slug" >
+
+                        <label for="meta_title" class="fw-bold mb-2">Meta Title</label>
+                        <input type="text" class="form-control mt-2" name="meta_title" >
+
+                        <label for="meta_description" class="fw-bold mb-2">Meta description</label>
+                        <input type="text" class="form-control mt-2" name="meta_description" >
 
                         <button type="submit" class="btn btn-primary w-100 mt-2"> Add Product</button>
                     </form>
